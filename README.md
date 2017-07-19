@@ -46,7 +46,7 @@ void setup()
 
 void loop() {
   // put your main code here, to run repeatedly:
-  digitalWrite( greenPin,HIGH) ;
+  digitalWrite( greenPin,LOW) ; //high changed to low because of signal inversion
   // drive for a while
  delay (maxDriveTimeBeforeTurn);
   
@@ -57,20 +57,20 @@ void loop() {
   }
   */
   
-  digitalWrite ( redPin, HIGH) ;
+  digitalWrite ( redPin, LOW) ;  //high changed to low because of signal inversion
   digitalWrite( rightTurnPin,HIGH) ;
   delay (2000);
-  digitalWrite( rightTurnPin, LOW) ;
-  digitalWrite( redPin, LOW) ;
+  digitalWrite( rightTurnPin, LOW ; 
+  digitalWrite( redPin, HIGH) ; //low changed to high because of signal inversion
 
   delay (2000);
 
   // Turn left for 2000 ms
-  digitalWrite (bluePin, HIGH) ;
+  digitalWrite (bluePin, LOW) ; //high changed to low because of signal inversion
   digitalWrite( leftTurnPin, HIGH) ;
   delay (2000);
   digitalWrite( leftTurnPin, LOW) ;
-  digitalWrite( bluePin, LOW) ;
+  digitalWrite( bluePin, HIGH) ; //low changed to high because of signal inversion
 
  loopsSoFar = loopsSoFar + 1;
 
@@ -84,7 +84,7 @@ void loop() {
     while (zoomZoom > 0) {
       analogWrite (goPin, zoomZoom) ;
       zoomZoom = zoomZoom - vroomVroom;
-      digitalWrite( greenPin, LOW) ;
+      digitalWrite( greenPin, HIGH) ; //low changed to high because of signal inversion
     }
     // Empty while to simulate "turning off"
     while (1==1) {
